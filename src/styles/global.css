@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* IRN Dental - tribute to Irn-Bru visual language.
+   Signature orange + royal blue + condensed display caps. */
+@theme {
+  --color-irn: #ff6900;          /* signature orange */
+  --color-irn-deep: #e25600;     /* deeper orange for hover/borders */
+  --color-irn-glow: #ffb060;     /* lighter tint */
+  --color-royal: #003da5;        /* deep blue, can panels */
+  --color-royal-deep: #002a72;
+  --color-sun: #ffd500;          /* highlight yellow */
+  --color-ink: #0a0a0a;          /* near-black body */
+  --color-paper: #ffffff;        /* pure white */
+  --color-cream: #fff8ee;        /* warm off-white */
+  --color-fog: #6b6b6b;          /* secondary text */
+  --color-stone: #d8d6cf;        /* hairlines */
+
+  --font-display: "Anton", "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", monospace;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--font-body);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-feature-settings: "ss01", "cv11", "tnum";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--color-irn); color: #fff; }
+
+  .font-display { font-family: var(--font-display); letter-spacing: 0.005em; line-height: 0.92; }
+  .font-mono { font-family: var(--font-mono); }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 13px;
+    color: var(--color-irn);
+  }
+  .eyebrow-blue { color: var(--color-royal); }
+  .eyebrow-ink { color: var(--color-ink); }
+
+  .tnum { font-variant-numeric: tabular-nums; }
+
+  /* Can-style horizontal stripes */
+  .can-stripes {
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--color-irn) 0 12px,
+      var(--color-irn-deep) 12px 14px
+    );
+  }
+
+  /* Registration crosshair for editorial detail */
+  .reg-mark::before {
+    content: "+";
+    display: inline-block;
+    margin-right: 0.4em;
+    color: var(--color-irn);
+    font-weight: 700;
+  }
+
+  /* Headline display style. */
+  .display-xl {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: clamp(56px, 11vw, 168px);
+    line-height: 0.86;
+    letter-spacing: -0.005em;
+  }
+  .display-lg {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: clamp(40px, 7vw, 96px);
+    line-height: 0.9;
+  }
+
+  /* Subtle barcode for can-feel detail */
+  .barcode {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-ink) 0 2px, transparent 2px 4px,
+      var(--color-ink) 4px 7px, transparent 7px 9px,
+      var(--color-ink) 9px 10px, transparent 10px 13px
+    );
+    height: 36px;
+  }
+}

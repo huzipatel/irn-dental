@@ -1,0 +1,75 @@
+---
+import Mark from "./Mark.astro";
+---
+
+<section class="bg-irn text-paper relative overflow-hidden border-b-4 border-ink">
+  <!-- Diagonal scotch grid in background -->
+  <div class="absolute inset-0 opacity-15 pointer-events-none"
+       style="background-image: linear-gradient(45deg, #ffffff 1px, transparent 1px), linear-gradient(-45deg, #ffffff 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+  <!-- Watermark mark, far right -->
+  <div class="hidden md:block absolute -top-10 -right-20 text-paper/10 pointer-events-none">
+    <Mark size={520} />
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-8 pt-20 md:pt-28 pb-20 md:pb-28 grid md:grid-cols-12 gap-10 items-end">
+    <div class="md:col-span-9">
+      <p class="font-display uppercase tracking-[0.3em] text-[13px] text-ink reg-mark">
+        A dental practice from Glasgow
+      </p>
+      <h1 class="display-xl text-paper mt-6">
+        Made in Scotland<br/>
+        <span class="text-ink">from teeth.</span>
+      </h1>
+      <p class="mt-8 max-w-2xl text-paper/95 text-[19px] leading-[1.5] font-medium">
+        IRN Dental is Scotland's other national smile. Family, cosmetic, emergency.
+        Open late four nights a week, because the working day is the working day.
+        Pure phenomenal.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 bg-ink text-paper font-display uppercase tracking-[0.15em] text-[15px] px-7 py-4 border-2 border-ink hover:bg-paper hover:text-ink transition-colors"
+        >
+          Book your chair →
+        </a>
+        <a
+          href="#what"
+          class="inline-flex items-center gap-2 bg-paper text-ink font-display uppercase tracking-[0.15em] text-[15px] px-7 py-4 border-2 border-ink hover:bg-sun transition-colors"
+        >
+          See the menu
+        </a>
+      </div>
+    </div>
+
+    <!-- Right-hand "nutrition info" panel, riff on a can side panel -->
+    <aside class="md:col-span-3 bg-paper text-ink border-4 border-ink p-5 self-stretch">
+      <p class="font-display uppercase text-[14px] tracking-[0.2em] border-b-2 border-ink pb-2">
+        Practice info
+      </p>
+      <dl class="mt-3 space-y-2 text-[13px] tnum">
+        <div class="flex justify-between"><dt class="text-fog">Est.</dt><dd class="font-display">2026</dd></div>
+        <div class="flex justify-between"><dt class="text-fog">City</dt><dd class="font-display">Glasgow</dd></div>
+        <div class="flex justify-between"><dt class="text-fog">Open until</dt><dd class="font-display">20:00</dd></div>
+        <div class="flex justify-between"><dt class="text-fog">Nights/wk</dt><dd class="font-display">4</dd></div>
+        <div class="flex justify-between"><dt class="text-fog">CQC</dt><dd class="font-display">✓ Registered</dd></div>
+        <div class="flex justify-between"><dt class="text-fog">GDC</dt><dd class="font-display">✓ Listed</dd></div>
+      </dl>
+      <div class="barcode mt-4"></div>
+      <p class="mt-2 text-[10px] uppercase tracking-[0.2em] text-fog text-center">No. 1901 · Scotland</p>
+    </aside>
+  </div>
+
+  <!-- Bottom marquee / ticker style -->
+  <div class="relative bg-ink text-irn border-t-4 border-ink">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-3 flex items-center gap-6 overflow-hidden text-[13px] font-display uppercase tracking-[0.2em] whitespace-nowrap">
+      <span>★ Phenomenal</span>
+      <span>★ Pure dead brilliant</span>
+      <span>★ Made in Scotland from teeth</span>
+      <span>★ Your other national smile</span>
+      <span>★ Open until 20:00</span>
+      <span>★ Phenomenal</span>
+    </div>
+  </div>
+</section>

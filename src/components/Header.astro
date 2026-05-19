@@ -1,0 +1,51 @@
+---
+import Mark from "./Mark.astro";
+
+const nav = [
+  { href: "#what",     label: "What we dae" },
+  { href: "#evenings", label: "Late nights" },
+  { href: "#promise",  label: "The promise" },
+  { href: "#hours",    label: "Hours" },
+  { href: "#contact",  label: "Contact" },
+];
+---
+<!-- Top stripe: faux can-style banner with running tagline -->
+<div class="can-stripes text-paper">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between text-[11px] font-display uppercase tracking-[0.25em] py-2">
+    <span>Made in Scotland · From teeth</span>
+    <span class="hidden sm:inline">Phenomenal · Est. 2026 · Glasgow</span>
+    <span class="hidden md:inline">Open until 20:00 Mon–Thu</span>
+  </div>
+</div>
+
+<header class="bg-paper border-b-4 border-ink sticky top-0 z-40">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between gap-6 py-4">
+    <a href="#" class="flex items-center gap-3 group" aria-label="IRN Dental home">
+      <Mark size={44} class="text-irn shrink-0" />
+      <span class="flex flex-col leading-none">
+        <span class="font-display uppercase text-[26px] tracking-tight text-ink">IRN Dental</span>
+        <span class="text-[10px] uppercase tracking-[0.3em] text-fog mt-1">Glasgow · Scotland</span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden lg:flex items-center gap-8 text-[13px] font-display uppercase tracking-[0.15em] text-ink">
+      {nav.map(item => (
+        <a href={item.href} class="hover:text-irn transition-colors">{item.label}</a>
+      ))}
+    </nav>
+
+    <a
+      href="#contact"
+      class="hidden sm:inline-flex items-center gap-2 bg-irn text-paper font-display uppercase tracking-[0.15em] text-[13px] px-5 py-2.5 border-2 border-ink hover:bg-ink hover:text-irn transition-colors"
+    >
+      Book in
+    </a>
+    <a
+      href="#contact"
+      class="sm:hidden inline-flex items-center bg-irn text-paper font-display uppercase tracking-[0.15em] text-[12px] px-3 py-2 border-2 border-ink"
+      aria-label="Book an appointment"
+    >
+      Book
+    </a>
+  </div>
+</header>

@@ -1,0 +1,35 @@
+# Build settings for Netlify.
+# Astro builds a static site to ./dist.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Use modern Node — Astro 6 requires Node 22.12+.
+[build.environment]
+  NODE_VERSION = "22"
+
+# Long-cache hashed assets (Astro emits content-hashed filenames in /_astro/).
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Security headers — sensible defaults for a marketing site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+# Pretty 404.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

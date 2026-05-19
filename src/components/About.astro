@@ -1,0 +1,40 @@
+---
+const points = [
+  { n: "01", title: "Upsell",         tagline: "Honest work, every time.", body: "We recommend treatment because it's needed. Not because it's quarter-end." },
+  { n: "02", title: "Jargon",         tagline: "Plain talk, every time.",  body: "No Latin. No fluff. Your mouth, your decision, our advice." },
+  { n: "03", title: "Wasted time",    tagline: "Your clock matters.",      body: "Online booking, evening hours, same-day emergencies. We respect the diary." },
+];
+---
+
+<section id="promise" class="bg-cream border-b-4 border-ink">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-24 md:py-32 grid md:grid-cols-12 gap-12 items-start">
+
+    <div class="md:col-span-5 md:sticky md:top-32">
+      <p class="eyebrow">§ 04 · The promise</p>
+      <h2 class="display-lg mt-4 text-ink">
+        Three things<br/><span class="text-irn">we will not</span> dae.
+      </h2>
+      <p class="mt-8 max-w-md text-ink/80 text-[16px] leading-[1.7]">
+        Different practice, different promise. This is what you'll never get from us
+        — written down, so we can be held to it.
+      </p>
+
+      <div class="mt-10 pt-6 border-t-2 border-ink">
+        <p class="eyebrow eyebrow-ink">Regulated by</p>
+        <p class="mt-2 font-display uppercase text-[15px]">General Dental Council<br/>Care Quality Commission</p>
+      </div>
+    </div>
+
+    <ul class="md:col-span-7 space-y-0 border-t-2 border-ink">
+      {points.map(p => (
+        <li class="grid grid-cols-[80px,1fr] gap-6 py-8 border-b-2 border-ink">
+          <span class="font-display text-[64px] text-irn tnum leading-none">{p.n}</span>
+          <div>
+            <h3 class="font-display uppercase text-[28px] tracking-tight">No {p.title.toLowerCase()}. <span class="text-irn">{p.tagline}</span></h3>
+            <p class="mt-3 text-ink/80 text-[15px] leading-[1.7] max-w-xl">{p.body}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

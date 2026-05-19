@@ -1,0 +1,39 @@
+---
+const services = [
+  { n: "01", title: "Check-ups & Hygiene", body: "The basics, done properly. Examination, scale and polish, a plan you can actually follow." },
+  { n: "02", title: "Cosmetic",            body: "Bonding, veneers, whitening. A smile that still looks like yours, only Tuesday." },
+  { n: "03", title: "Crowns & Implants",   body: "Digitally planned, hand-finished. Built to last longer than the can in your hand." },
+  { n: "04", title: "Root Canals",         body: "Modern, calm, often single-visit. The bit nobody wants, done properly." },
+  { n: "05", title: "Clear Aligners",      body: "Straight teeth without the metal mouth. Planned by your dentist, not a website." },
+  { n: "06", title: "Emergencies",         body: "Pain, swelling, broken bits. We keep slots free every day, evenings included." },
+];
+---
+
+<section id="what" class="bg-paper border-b-4 border-ink">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-24 md:py-32">
+
+    <div class="grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-8">
+        <p class="eyebrow">§ 02 · The menu</p>
+        <h2 class="display-lg mt-4 text-ink">
+          Six things we dae.<br/><span class="text-irn">All of them, properly.</span>
+        </h2>
+      </div>
+      <p class="md:col-span-4 text-ink/75 text-[15px] leading-[1.7]">
+        We're a general practice with cosmetic and emergency cover. Every plan is
+        built around the person in the chair — not the price list, not the rota.
+      </p>
+    </div>
+
+    <ul class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-0 border-l-2 border-t-2 border-ink">
+      {services.map(s => (
+        <li class="relative bg-paper border-r-2 border-b-2 border-ink p-8 hover:bg-sun transition-colors">
+          <span class="absolute top-4 right-4 font-display text-[42px] text-irn tnum leading-none">{s.n}</span>
+          <h3 class="font-display uppercase text-[24px] tracking-tight pr-12">{s.title}</h3>
+          <p class="mt-3 text-ink/80 text-[14px] leading-[1.65]">{s.body}</p>
+          <p class="mt-6 font-display uppercase tracking-[0.2em] text-[11px] text-fog">Quoted at consultation</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

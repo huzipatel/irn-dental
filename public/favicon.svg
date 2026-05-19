@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#ff6900"/>
+  <g stroke="#ffffff" stroke-width="2.4" fill="none" stroke-linecap="square">
+    <path d="M14 14 L50 50"/><path d="M50 14 L14 50"/>
+  </g>
+  <circle cx="32" cy="32" r="13" fill="#ffffff"/>
+  <text x="32" y="30" text-anchor="middle" font-family="Anton, 'Arial Narrow', sans-serif" font-size="11" font-weight="700" fill="#ff6900" letter-spacing="0.5">IRN</text>
+  <text x="32" y="40" text-anchor="middle" font-family="Anton, 'Arial Narrow', sans-serif" font-size="6" font-weight="700" fill="#ff6900" letter-spacing="1.2">DENTAL</text>
+</svg>

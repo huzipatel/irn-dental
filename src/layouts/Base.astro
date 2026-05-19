@@ -1,0 +1,58 @@
+---
+import "../styles/global.css";
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+const {
+  title = "IRN Dental | Made in Scotland from teeth.",
+  description = "IRN Dental — Scotland's other national smile. Family, cosmetic and emergency dentistry. Phenomenal.",
+  canonical,
+} = Astro.props;
+const site = Astro.site?.toString() ?? "https://irn.dental";
+const canon = canonical ?? site;
+---
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canon} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#ff6900" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canon} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "IRN Dental",
+      "slogan": "Made in Scotland from teeth.",
+      "url": site,
+      "telephone": "+44 0000 000 0000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Glasgow",
+        "addressRegion": "Scotland",
+        "addressCountry": "GB"
+      },
+      "openingHours": ["Mo-Th 08:00-20:00", "Fr 08:00-18:00", "Sa 09:00-16:00"]
+    })} />
+  </head>
+  <body class="bg-paper text-ink">
+    <slot />
+  </body>
+</html>

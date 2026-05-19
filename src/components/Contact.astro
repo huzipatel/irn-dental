@@ -1,0 +1,98 @@
+---
+import Mark from "./Mark.astro";
+---
+
+<section id="contact" class="bg-ink text-paper border-b-4 border-ink">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-24 md:py-32 grid md:grid-cols-12 gap-12 items-start">
+
+    <div class="md:col-span-5">
+      <p class="eyebrow">§ 06 · Get in touch</p>
+      <h2 class="display-lg mt-4">
+        Phone, email,<br/><span class="text-irn">or walk in.</span>
+      </h2>
+      <p class="mt-8 max-w-md text-paper/85 text-[16px] leading-[1.7]">
+        New patient? Fill the form. Existing patient? Phone us during opening hours.
+        Emergency? Phone us any time and we'll sort you.
+      </p>
+
+      <div class="mt-12 space-y-6 text-[15px]">
+        <div>
+          <p class="eyebrow">Telephone</p>
+          <a href="tel:+440000000000" class="font-display text-[26px] tnum text-irn hover:underline mt-1 block">0000 000 0000</a>
+        </div>
+        <div>
+          <p class="eyebrow">Email</p>
+          <a href="mailto:hello@irn.dental" class="font-display text-[22px] text-paper hover:text-irn mt-1 block">hello@irn.dental</a>
+        </div>
+        <div>
+          <p class="eyebrow">The practice</p>
+          <address class="not-italic mt-1 text-paper/90 leading-[1.6]">
+            IRN Dental<br/>
+            Street address<br/>
+            Glasgow · Postcode<br/>
+            Scotland
+          </address>
+        </div>
+      </div>
+
+      <div class="mt-12 flex items-center gap-4">
+        <Mark size={48} class="text-irn" />
+        <p class="font-display uppercase tracking-[0.2em] text-[12px] text-paper/70">No. 1901 · Scotland · Phenomenal</p>
+      </div>
+    </div>
+
+    <!-- Form on right -->
+    <div class="md:col-span-7 bg-paper text-ink border-4 border-irn p-6 md:p-10">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/?contact=ok#contact"
+        class="grid grid-cols-1 sm:grid-cols-2 gap-5"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <label class="block sm:col-span-1">
+          <span class="block eyebrow eyebrow-ink">Name</span>
+          <input required name="name" autocomplete="name"
+            class="mt-2 w-full bg-paper border-2 border-ink px-3 py-3 text-[15px] font-medium focus:outline-none focus:bg-sun" />
+        </label>
+        <label class="block sm:col-span-1">
+          <span class="block eyebrow eyebrow-ink">Phone</span>
+          <input required name="phone" type="tel" autocomplete="tel"
+            class="mt-2 w-full bg-paper border-2 border-ink px-3 py-3 text-[15px] font-medium focus:outline-none focus:bg-sun" />
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="block eyebrow eyebrow-ink">Email</span>
+          <input required name="email" type="email" autocomplete="email"
+            class="mt-2 w-full bg-paper border-2 border-ink px-3 py-3 text-[15px] font-medium focus:outline-none focus:bg-sun" />
+        </label>
+        <fieldset class="sm:col-span-2">
+          <legend class="eyebrow eyebrow-ink">When suits?</legend>
+          <div class="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-2 text-[13px] font-display uppercase tracking-[0.1em]">
+            {["Morning","Afternoon","Evening","Saturday"].map(t => (
+              <label class="flex items-center gap-2 border-2 border-ink px-3 py-3 cursor-pointer has-[:checked]:bg-irn has-[:checked]:text-paper">
+                <input type="checkbox" name="time" value={t} class="accent-irn" />
+                {t}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <label class="block sm:col-span-2">
+          <span class="block eyebrow eyebrow-ink">What's the story?</span>
+          <textarea name="message" rows="4"
+            class="mt-2 w-full bg-paper border-2 border-ink px-3 py-3 text-[15px] font-medium focus:outline-none focus:bg-sun"></textarea>
+        </label>
+        <button
+          type="submit"
+          class="sm:col-span-2 inline-flex items-center justify-center gap-2 bg-irn text-paper font-display uppercase tracking-[0.2em] text-[15px] px-7 py-4 border-2 border-ink hover:bg-ink hover:text-irn transition-colors"
+        >
+          Send it →
+        </button>
+        <p class="sm:col-span-2 text-[12px] text-fog">We reply within one working day. Promise.</p>
+      </form>
+    </div>
+  </div>
+</section>

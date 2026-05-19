@@ -6,8 +6,8 @@ interface Props {
   canonical?: string;
 }
 const {
-  title = "IRN Dental | Made in Scotland from teeth.",
-  description = "IRN Dental — Scotland's other national smile. Family, cosmetic and emergency dentistry. Phenomenal.",
+  title = "IRN Dental | Made in Lancashire from teeth.",
+  description = "IRN Dental — Lancashire's other national smile. Family, cosmetic and emergency dentistry. Phenomenal.",
   canonical,
 } = Astro.props;
 const site = Astro.site?.toString() ?? "https://irn.dental";
@@ -40,13 +40,13 @@ const canon = canonical ?? site;
       "@context": "https://schema.org",
       "@type": "Dentist",
       "name": "IRN Dental",
-      "slogan": "Made in Scotland from teeth.",
+      "slogan": "Made in Lancashire from teeth.",
       "url": site,
       "telephone": "+44 0000 000 0000",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Glasgow",
-        "addressRegion": "Scotland",
+        "addressLocality": "Blackburn",
+        "addressRegion": "Lancashire",
         "addressCountry": "GB"
       },
       "openingHours": ["Mo-Th 08:00-20:00", "Fr 08:00-18:00", "Sa 09:00-16:00"]
